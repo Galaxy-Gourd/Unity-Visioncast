@@ -1,0 +1,48 @@
+{
+  "name": "com.galaxygourd.visioncast",
+  "version": "1.0.0",
+  "displayName": "GourdVision",
+  "description": "Physics-based simulation of line of sight. Includes support for dynamic vision obstruction.",
+  "author": {
+    "name": "Galaxy Gourd",
+    "email": "mstephens.dev@gmail.com",
+    "url" : "http://www.mstephensdev.com/" 
+  },
+  "dependencies": {
+    "com.unity.burst": "1.8.12",
+    "com.unity.collections": "2.5.1",
+    "com.unity.mathematics": "1.3.2"
+  },
+  "samples": [
+      {
+        "displayName": "Core",
+        "description": "Basic demo scene showing visioncast system in action. Includes examples of vision sources, visible objects, and line of sight visualization.",
+        "path": "Samples~/Core"
+      },
+      {
+        "displayName": "DoD Deferred Driver",
+        "description": "Self-contained driver for the data-oriented vision path with the deferred (off-main-thread) raycast, using no external scheduler. Sets manual physics and calls the vision phases in explicit order, so you can test or showcase the DoD path by dropping one component into a scene.",
+        "path": "Samples~/DoDDeferred"
+      },
+      {
+        "displayName": "Crowd LOD",
+        "description": "Vision level-of-detail and relevance at scale. One component builds a field of hundreds of rotating vision sources plus scattered targets and an orbiting relevance origin, drives the DoD pipeline, and shows the per-tick cost live. Toggle LOD to watch the tick collapse from every-agent-every-tick to a tiered cadence; agents brighten the tick they cast and dim as their data goes stale.",
+        "path": "Samples~/CrowdLOD"
+      },
+      {
+        "displayName": "Stealth Exposure",
+        "description": "Vision as a lighting/exposure signal. Several spotlights are each a vision source; a VisioncastSourceCompound merges them into one 0..1 'how lit is the player' value as the player walks a loop through light and shadow. Toggle the aggregation mode (Max / Sum / Average) and the sampling density (coarse binary vs dense smooth) to feel how each shapes the exposure.",
+        "path": "Samples~/StealthExposure"
+      },
+      {
+        "displayName": "Guard Patrol",
+        "description": "AI perception with a Patrol -> Alert -> Search state machine. A guard built on VisioncastSourceFiltered reacts to the NewlySeen / NewlyLost enter-exit events as an intruder circles through its vision cone and behind an occluding wall: it locks on and tracks when it sees the intruder, heads to the last-known spot and counts down when it loses line of sight, then lapses back to patrol on timeout. The intruder is a multi-collider actor (head + torso under one identity), and the FOV cone is drawn semi-transparent and tinted by state.",
+        "path": "Samples~/GuardPatrol"
+      },
+      {
+        "displayName": "Interaction Focus",
+        "description": "\"Look to interact\" using VisioncastSourceFiltered.TargetedObject - the single visible object nearest the centre of view. An interactor faces a fan of props; several are in view at once, but only the one you are pointing at is focused (it glows, grows, and lifts). Sweep the aim slider and the focus hops from prop to prop; click Interact to act on whatever is focused. Shows the single-object disambiguation an interaction system needs: not what can I see, but what am I pointing at.",
+        "path": "Samples~/InteractionFocus"
+      }
+    ]
+}

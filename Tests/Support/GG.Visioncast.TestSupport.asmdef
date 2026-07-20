@@ -1,0 +1,22 @@
+{
+    "name": "GG.Visioncast.TestSupport",
+    "rootNamespace": "GalaxyGourd.Visioncast.Tests",
+    "references": [
+        "GG.Visioncast",
+        "GG.Raycast",
+        "Unity.Mathematics",
+        "Unity.Collections",
+        "Unity.Burst"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
