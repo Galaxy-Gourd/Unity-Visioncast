@@ -60,10 +60,6 @@ To be notified when it's seen, an object implements **IVisibleObject**; its `See
 
 You don't hand-place the points that get raycasted against — the narrowphase samples them from the target's collider automatically. How densely they're sampled is configurable per-source via **SampleMode** / **SampleResolution**: the default is a handful of points (fast, fine for simple detection), while denser sampling covers more of the object and yields a smoother visibility fraction for uses like stealth exposure.
 
-![Screenshot 2024-02-02 at 10 17 57 AM](https://github.com/mjstephens/Visioncast/assets/4731148/4a93882b-79f3-46ed-90dc-7f96afbe1a01)
-_Sample points (red spheres) around a target. The system generates these from the target's collider — they are the raycast targets for the narrowphase, and denser sampling (SampleResolution) covers more of the object for a finer visibility result._
-
-
 ## Samples
 
 Download samples by selecting the visioncast package in the package manager, then navigating to the "samples" tab.
