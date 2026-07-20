@@ -7,8 +7,7 @@ Line of sight simulation package for Unity. **Vision sources** will collect **vi
 > **Data-oriented mode.** A Burst/Jobs pipeline computes the whole per-tick vision natively — ~8× faster at
 > 1000 sources, ~15× less main-thread work with the deferred (off-main-thread) raycast, zero per-frame GC.
 > Same MonoBehaviour authoring and API; opt in with `VisionPipeline.UseDod()`. See
-> [`SETUP-DOD.md`](./SETUP-DOD.md) to enable it and [`../PERFORMANCE-DOD.md`](../PERFORMANCE-DOD.md) for the
-> measurements and design.
+> [`SETUP-DOD.md`](./SETUP-DOD.md).
 
 ![Screenshot 2024-02-02 at 10 07 54 AM](https://github.com/mjstephens/Visioncast/assets/4731148/df78fd9f-9168-4c5a-8d8e-cf4de3568471)
 
